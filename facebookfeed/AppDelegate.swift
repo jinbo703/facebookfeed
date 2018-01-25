@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  facebookfeed
 //
-//  Created by PAC on 27/04/2017.
-//  Copyright © 2017 PAC. All rights reserved.
+//  Created by John Nik on 27/04/2017.
+//  Copyright © 2017 johnik703. All rights reserved.
 //
 
 import UIKit
@@ -15,6 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let customTabBarController = CustomTabBarController()
+        let navigationController = UINavigationController(rootViewController: customTabBarController)
+        
+        window?.rootViewController = navigationController
+        
+        navigationController.navigationBar.barTintColor = UIColor(red: 51/255, green: 98/255, blue: 149/255, alpha: 1)
+        
+//        UINavigationBar.appearance().tintColor = UIColor(red: 51/255, green: 98/255, blue: 149/255, alpha: 1)
+
+        
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        UITabBar.appearance().tintColor = UIColor.rgb(red: 70, green: 146, blue: 250)
+        
+        application.statusBarStyle = .lightContent
+        
         // Override point for customization after application launch.
         return true
     }
